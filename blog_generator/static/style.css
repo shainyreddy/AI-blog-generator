@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Heading Adjustments */
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Thinner Input Box */
+input {
+    width: 50%;  /* Reduced width to make it thinner */
+    max-width: 400px; /* Ensures it doesn't become too wide */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+/* Button Styling */
+button {
+    width: 150px;
+    padding: 10px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Blog Output Box */
+.blog-output-container {
+    margin-top: 25px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    max-width: 100%;
+}
+
+/* Blog Content Styling */
+.blog-output {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 19px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+}
+
+

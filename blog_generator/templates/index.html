@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Blog Generator</h1>
+        <form id="blogForm">
+            <label for="topic">Enter Blog Topic:</label>
+            <input type="text" id="topic" name="topic" required>
+            <button type="submit">Generate</button>
+        </form>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById("blogForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let topic = document.getElementById("topic").value;
+            let output = document.getElementById("output");
+
+            output.innerHTML = "<p>Generating blog...</p>";
+
+            fetch('/generate', {
+                method: 'POST',
+                body: new URLSearchParams({ 'topic': topic }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(response => response.json())
+            .then(data => output.innerHTML = `<p>${data.blog.replace(/\n/g, '<br>')}</p>`)
+            .catch(error => output.innerHTML = "<p>Error generating blog.</p>");
+        });
+    </script>
+</body>
+</html>
